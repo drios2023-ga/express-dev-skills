@@ -7,11 +7,14 @@
     <title>Skills</title>
 </head>
 <body>
+    <a href="/">Home</a>
     <h1>Skills</h1>
-    <ul>
+    <ul style="list-style-type: none;">
         <% skills.forEach(function(s) { %>
-        <li>
-            <%= s.skill %>
+        <li style="margin:15px 25px 15px 25px">
+            <%= s.id %>
+            -
+            <a href="/skills/<%= s.id %>"><%= s.skill %></a>
             -
             <%= s.level %>
         </li>
