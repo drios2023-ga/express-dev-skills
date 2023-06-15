@@ -1,7 +1,10 @@
 const skill = require('../models/skill');
 
 module.exports = {
-    index, show
+    index, 
+    show, 
+    new: newSkill, 
+    create
 }
 
 function show(req, res){
@@ -15,3 +18,15 @@ function index(req, res){
         skills: skill.getAllSkills()
     });
 }
+
+function newSkill(req, res){
+    res.render('skills/new', {title: 'New Skill'});
+  }
+
+function create(req, res){
+    console.log(req.body);
+    //models are responsible for CRUD'ing the data
+    skill.create(req.body);
+    // Always do a redirect when data has been changed
+    res.redirect('/skills');
+  }

@@ -7,7 +7,9 @@ const skills = [
 ]
 
 module.exports = {
-    getAllSkills, getOneSkill
+    getAllSkills, 
+    getOneSkill, 
+    create
 }
 
 function getAllSkills(){
@@ -18,3 +20,10 @@ function getOneSkill(id){
     id = parseInt(id);
     return skills.find(skill => skill.id === id);
 }
+
+function create(skill, level){
+    //Add the id
+    skill.id = Date.now()%1000000;
+    skill.level = level;
+    skills.push(skill);
+  }
