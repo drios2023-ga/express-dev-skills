@@ -25,6 +25,7 @@ function newSkill(req, res){
 
 function create(req, res){
     console.log(req.body);
+    console.log(req.body.name);
     //models are responsible for CRUD'ing the data
     skill.create(req.body);
     // Always do a redirect when data has been changed
