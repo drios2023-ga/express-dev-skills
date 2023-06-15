@@ -11,7 +11,10 @@ router.get('/', skillsController.index);
 //GET /skills/:id
 router.get('/:id',skillsController.show);
 
-//POST /todos
+//POST /skills
 router.post('/', skillsController.create);
+
+//DELETE /skills/:id
+router.delete('/:id',skillsController.delete);
 
 module.exports = router;
